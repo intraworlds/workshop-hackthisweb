@@ -15,14 +15,14 @@ $users = $model->getAllUsers();
 ?>
 
 <form method="POST">
-    <?php if (!ENABLE_CSRF): ?>
+    <?php if (ENABLE_CSRF): ?>
         <input type="hidden" name="csrf" value="<?= $_SESSION['csrf'] ?>">
     <?php endif; ?>
     <div class="form-group">
         <label for="receiver">Receiver</label>
         <select class="form-control" id="receiver" name="receiver">
             <?php foreach ($users as $user): ?>
-                <option value="<?= $user['id'] ?>"><?= $user['name'] ?> (<?= $user['email'] ?>)</option>
+                <option value="<?= $user['id'] ?>"><?= ENABLE_XSS ? $user['name'] : htmlentities($user['name']) ?> (<?= ENABLE_XSS ? $user['email'] : htmlentities($user['email']) ?>)</option>
             <?php endforeach; ?>
         </select>
     </div>
