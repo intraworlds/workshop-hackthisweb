@@ -5,7 +5,7 @@
 ### Installation
 1. [Install Docker](https://docs.docker.com/install/)
 1. [Install Docker Compose](https://docs.docker.com/compose/install/)
-1. Clone this repository `git clone https://github.com/intraworlds/HackThisWeb.git`
+1. Clone this repository `git clone https://github.com/intraworlds/workshop-hackthisweb.git`
 or download [ZIP file](https://github.com/intraworlds/HackThisWeb/archive/master.zip)
 
 ### Run
